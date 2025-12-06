@@ -1,0 +1,189 @@
+/* -------------------- إعدادات عامة -------------------- */
+:root {
+    --primary-color: #2a6f8b; /* لون أساسي - أزرق هادئ */
+    --secondary-color: #f4f4f4; /* لون خلفية ثانوي للصفحات الداخلية */
+    --text-color: #333;
+    --white: #ffffff;
+    --padding-value: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif; /* خط عربي جميل من Google Fonts */
+    background-color: var(--white);
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: right; /* محاذاة لجميع العناصر باللغة العربية */
+}
+
+.container {
+    width: 85%; /* عرض مناسب */
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* -------------------- الترويسة (Header) -------------------- */
+header {
+    background: var(--primary-color);
+    color: var(--white);
+    padding-top: 15px;
+    min-height: 70px;
+    border-bottom: 3px solid #1e5163;
+    /* لإضافة تأثير بسيط لخط الهيدر */
+}
+
+header h1 {
+    float: right; 
+    font-size: 1.8em;
+    padding: 10px 0;
+}
+
+header nav {
+    float: left; 
+    /* لضمان بقاء التنقل على اليسار في التصميم اليميني */
+}
+
+header nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 24px 15px; /* لزيادة مساحة الضغط */
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover, header nav a.active {
+    background-color: #1e5163;
+}
+
+/* -------------------- القسم الرئيسي (Main/Hero) -------------------- */
+.hero {
+    /* يمكنك استبدال الرابط بصورة خلفية جميلة ذات صلة بالجامعة */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x400.png?text=University+Innovation+Club') no-repeat center center/cover;
+    color: var(--white);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero .container {
+    padding: 40px;
+    text-align: right;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: var(--padding-value);
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: calc(2 * var(--padding-value));
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: 2px solid var(--white);
+}
+
+.button:hover {
+    background: #e2e2e2;
+}
+
+/* -------------------- محتوى الصفحات الداخلية -------------------- */
+.content-section {
+    padding: 40px 0;
+    background: var(--secondary-color);
+    min-height: 60vh; /* لضمان أن التذييل لا يرتفع للأعلى */
+}
+
+.content-section h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    width: fit-content; /* يجعل الخط تحت العنوان فقط */
+    padding-bottom: 5px;
+    margin-bottom: var(--padding-value);
+    margin-right: 0;
+}
+
+.content-section ul {
+    list-style: square;
+    margin-right: var(--padding-value);
+    margin-bottom: var(--padding-value);
+}
+
+.content-section li {
+    padding: 5px 0;
+}
+
+/* -------------------- نموذج التواصل (Contact Form) -------------------- */
+.contact-form input[type="text"], 
+.contact-form input[type="email"], 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form .button {
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* -------------------- التذييل (Footer) -------------------- */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 0;
+    font-size: 0.9em;
+}
+
+/* -------------------- التجاوب (Responsive Design) -------------------- */
+@media(max-width: 768px){
+    header h1, header nav {
+        float: none;
+        text-align: center;
+        padding-bottom: 5px;
+    }
+
+    header nav a {
+        padding: 10px 5px;
+        font-size: 14px;
+    }
+    
+    header nav a:hover, header nav a.active {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+}
